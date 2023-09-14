@@ -16,7 +16,9 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-const timeline = gsap.timeline({
+gsap.from(".nav-logo", {
+  width: "100%",
+  y: "-100%",
   scrollTrigger: {
     trigger: ".hero",
     start: "bottom bottom",
@@ -24,5 +26,3 @@ const timeline = gsap.timeline({
     scrub: 1,
   },
 });
-
-timeline.from(".nav-logo", { width: "100%", y: "-100%" });

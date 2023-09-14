@@ -14,12 +14,19 @@ main {
   background-color: $dark-color;
   padding-bottom: 200rem;
 
+  section {
+    position: sticky;
+    top: 0px;
+    background-color: red;
+  }
+
   .nav {
     @extend %flex-between;
     border-bottom: 2px solid $light-color;
     padding: 2.5rem;
     color: $light-color;
     position: relative;
+    top: 0px;
 
     ul {
       display: flex;
