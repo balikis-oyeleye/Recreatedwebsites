@@ -45,3 +45,16 @@ headerText.forEach((text) => {
     duration: 1,
   });
 });
+
+gsap.to(".img-container", {
+  scrollTrigger: {
+    trigger: ".header-circle",
+    start: "top top",
+    stop: "bottom top",
+    scrub: 1,
+    pin: true,
+  },
+  borderRadius: "0%",
+  width: "100vw",
+  height: "100vh",
+});
