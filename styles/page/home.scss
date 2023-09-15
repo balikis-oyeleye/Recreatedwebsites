@@ -10,14 +10,13 @@
 }
 
 main {
-  padding: 0 2.5rem;
   background-color: $dark-color;
-  padding-bottom: 200rem;
+  padding: 0 2.5rem;
+  height: 100%;
 
-  section {
+  .navigation {
     position: sticky;
     top: 0px;
-    background-color: red;
   }
 
   .nav {
@@ -58,6 +57,54 @@ main {
       text-transform: uppercase;
       width: 19rem;
       z-index: 2;
+    }
+  }
+
+  .header-text {
+    @extend %flex-center;
+    flex-direction: column;
+    margin-top: 8.8rem;
+
+    .text-container {
+      overflow: hidden;
+
+      &:nth-child(2) h1 {
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+
+    h1 {
+      font-size: 12.08rem;
+      line-height: 0.9;
+      font-weight: 700;
+      letter-spacing: -0.04rem;
+      color: $light-color;
+    }
+  }
+
+  .header-circle {
+    height: 300vh;
+    width: 100%;
+    margin: 30rem 0;
+
+    .circle-wrapper {
+      @extend %flex-center;
+      // position: sticky;
+      // top: 0;
+    }
+
+    .img-container {
+      border-radius: 100%;
+      height: 35rem;
+      width: 35rem;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }

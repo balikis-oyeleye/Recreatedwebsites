@@ -16,6 +16,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+// Nav Animation
 gsap.from(".nav-logo", {
   width: "100%",
   y: "-100%",
@@ -25,4 +26,22 @@ gsap.from(".nav-logo", {
     end: "bottom top",
     scrub: 1,
   },
+});
+
+// Header Text Animation
+const headerText = gsap.utils.toArray(".text-container h1");
+
+headerText.forEach((text) => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: text,
+      start: "-100% 5%",
+      scrub: 1,
+    },
+  });
+
+  timeline.to(text, {
+    y: "100%",
+    duration: 1,
+  });
 });
