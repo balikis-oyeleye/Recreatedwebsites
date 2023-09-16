@@ -36,7 +36,7 @@ headerText.forEach((text) => {
     scrollTrigger: {
       trigger: text,
       start: "-100% 5%",
-      scrub: 1,
+      scrub: 0.8,
     },
   });
 
@@ -46,15 +46,29 @@ headerText.forEach((text) => {
   });
 });
 
-gsap.to(".img-container", {
+// Header Circle Animation
+
+const circleTimeline = gsap.timeline({
   scrollTrigger: {
     trigger: ".header-circle",
     start: "top top",
     stop: "bottom top",
     scrub: 1,
-    pin: true,
   },
-  borderRadius: "0%",
-  width: "100vw",
-  height: "100vh",
 });
+
+circleTimeline
+  .to(".img-container", {
+    borderRadius: "0%",
+    width: "100vw",
+    height: "100vh",
+  })
+  .to(
+    ".navigation",
+    {
+      backgroundColor: "#e8e2da",
+      color: "#2e2a27",
+    },
+    0
+  )
+  .to("main", { backgroundColor: "#e8e2da" }, 0);
