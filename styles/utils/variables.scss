@@ -1,3 +1,12 @@
 // colors
 $light-color: #e8e2da;
 $dark-color: #2e2a27;
+
+$breakpoints: (
+  "xs": 475px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 1124px,
+  "xl": 1280px,
+  "2xl": 1536px,
+);
