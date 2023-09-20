@@ -99,4 +99,67 @@ main {
       }
     }
   }
+
+  .fdt {
+    position: relative;
+
+    &-text-container {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      display: none;
+
+      p {
+        font-size: 21rem;
+        line-height: 0.8;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+      }
+    }
+
+    .is-active {
+      display: block;
+    }
+
+    .img-wrapper {
+      position: relative;
+      z-index: 2;
+
+      .grid-item {
+        &:nth-child(1) {
+          width: 25%;
+          margin-right: 6.25%;
+        }
+        &:nth-child(2) {
+          width: 18.75%;
+          margin-right: 6.25%;
+          margin-top: 20%;
+        }
+        &:nth-child(3) {
+          width: 12%;
+          margin-top: 4%;
+        }
+        &:nth-child(4) {
+          width: 31.25%;
+          margin-top: 70%;
+        }
+      }
+
+      .grid {
+        @extend %flex-center;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+img {
+  @extend %img;
 }
