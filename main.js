@@ -72,3 +72,86 @@ circleTimeline
     0
   )
   .to("main", { backgroundColor: "#e8e2da" }, 0);
+
+// Furniture, Decor, Office and Tech
+const imageGrids = gsap.utils.toArray(".img-wrapper .grid");
+const fdtText = gsap.utils.toArray(".fdt-text");
+
+imageGrids.forEach((grid) => {
+  let currentGrid = imageGrids.indexOf(grid);
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: grid,
+      start: "20% bottom",
+      end: "bottom bottom",
+      onEnter: () => {
+        fdtText.forEach((text) => text.classList.remove("is-active"));
+        fdtText[currentGrid].classList.add("is-active");
+      },
+      onEnterBack: () => {
+        fdtText.forEach((text) => text.classList.remove("is-active"));
+        fdtText[currentGrid].classList.add("is-active");
+      },
+    },
+  });
+});
+
+// Grid-image move 1
+const gridImage1 = gsap.utils.toArray(".grid-item:nth-child(3n+1)");
+console.log(gridImage1);
+
+gridImage1.forEach((image) => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: image,
+      start: "top bottom",
+      stop: "bottom top",
+      scrub: 0.8,
+    },
+  });
+
+  timeline.to(image, {
+    y: "-80%",
+    duration: 1,
+  });
+});
+
+// Grid-image move 2
+const gridImage2 = gsap.utils.toArray(".grid-item:nth-child(3n+2)");
+
+gridImage2.forEach((image) => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: image,
+      start: "top bottom",
+      stop: "bottom top",
+      scrub: 1,
+    },
+  });
+
+  timeline.to(image, {
+    y: "-30%",
+    duration: 1,
+  });
+});
+
+// Grid-image move 1
+const gridImage3 = gsap.utils.toArray(".grid-item:nth-child(3n+3)");
+console.log(gridImage3);
+
+gridImage3.forEach((image) => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: image,
+      start: "top bottom",
+      stop: "bottom top",
+      scrub: 1.5,
+    },
+  });
+
+  timeline.to(image, {
+    y: "-50%",
+    duration: 1,
+  });
+});

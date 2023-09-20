@@ -101,23 +101,21 @@ main {
   }
 
   .fdt {
-    position: relative;
-
     &-text-container {
       position: sticky;
       top: 0;
       height: 100vh;
       z-index: 1;
+      overflow: hidden;
     }
 
     &-text {
       position: absolute;
-      bottom: 0;
+      bottom: -2rem;
       display: none;
 
       p {
-        font-size: 21rem;
-        line-height: 0.8;
+        font-size: 20rem;
         font-weight: 700;
         letter-spacing: -0.04em;
       }
@@ -155,6 +153,7 @@ main {
         @extend %flex-center;
         flex-direction: row;
         justify-content: flex-start;
+        height: 100vh;
       }
     }
   }
