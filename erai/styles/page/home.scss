@@ -39,6 +39,7 @@
       width: 450px;
       position: relative;
       height: 110px;
+      overflow: hidden;
 
       &:nth-child(even) {
         font-size: 100px;
