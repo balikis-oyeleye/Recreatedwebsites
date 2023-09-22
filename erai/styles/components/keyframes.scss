@@ -1,0 +1,10 @@
+@keyframes move {
+  0% {
+    left: 0;
+    transform: translate(-100%);
+  }
+  100% {
+    left: 100%;
+    transform: translate(0);
+  }
+}
