@@ -1,0 +1,64 @@
+.nav {
+  background: rgba(255, 255, 255, 0.54);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 597px;
+  height: 58px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0 10px;
+
+  .logo {
+    width: 57px;
+    height: 24px;
+
+    img {
+      @extend %img;
+    }
+  }
+
+  .menu {
+    @extend %flex-center;
+    gap: 16px;
+
+    li {
+      @extend %flex-center;
+      gap: 8px;
+      color: #121718;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+
+      &:hover svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    svg {
+      width: 10px;
+      height: 8px;
+      transition: transform 0.3s;
+    }
+  }
+
+  button {
+    background-color: #ffcd6d;
+    color: #121718;
+    border-radius: 12px;
+    transition: background 0.2s;
+    height: 47px;
+    padding: 0 12px;
+
+    &:hover {
+      color: #121718;
+      background: #ffd687;
+    }
+  }
+}
