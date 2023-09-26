@@ -15,6 +15,30 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+// animation
+const timeline = gsap.timeline({ defaults: { opacity: 0 } });
+
+timeline
+  .from(".hero-header .words", {
+    y: 180,
+    stagger: 0.05,
+    ease: "power2.out",
+
+    duration: 1,
+  })
+  .from(
+    ".hero-text .first",
+    { y: 180, stagger: 0.3, ease: "power2.out" },
+    "-=0.4"
+  )
+  .from(
+    ".hero-text .second",
+    { y: 180, stagger: 0.3, ease: "power2.out" },
+    "<0.1"
+  );
+
+// sequence animation
+
 const html = document.documentElement;
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -22,20 +46,20 @@ const context = canvas.getContext("2d");
 const currentFrame = (index) =>
   `https://zelt.app/assets/img/home/hero/sequence/${index}.webp`;
 
-const frameCount = 147;
+const frameCount = 118;
 
-canvas.height = 770;
-canvas.width = 1158;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const img = new Image();
 img.src = currentFrame(1);
 
 img.onload = function () {
-  context.drawImage(img, 0, 0);
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
 };
 
 const updateImage = (index) => {
   img.src = currentFrame(index);
-  context.drawImage(img, 0, 0);
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
 };
 
 const preloadImages = () => {
